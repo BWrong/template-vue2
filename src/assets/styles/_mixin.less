@@ -1,0 +1,74 @@
+.clearfloat() {
+  clear: both;
+  display: table;
+  width: 0;
+  height: 0;
+  content: ' ';
+}
+.border-gray() {
+  &:after {
+    border-color: #707070;
+  }
+}
+.text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-multi(@line: 3) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @line;
+  overflow: hidden;
+}
+
+.word-break() {
+  white-space: initial;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.transition(@transition:all 0.5s ease) {
+  -webkit-transition: @transition;
+  -moz-transition: @transition;
+  -o-transition: @transition;
+  transition: @transition;
+}
+
+.border-radius(@border-radius:3px) {
+  -webkit-border-radius: @border-radius;
+  -moz-border-radius: @border-radius;
+  -ms-border-radius: @border-radius;
+  border-radius: @border-radius;
+}
+
+// 三角形
+.triangle(@direction: bottom, @color: #343434, @width: 8px, @height: 4px) when(@direction=bottom) {
+  width: 0;
+  height: 0;
+  border-top: @width / 2 solid @color;
+  border-left: @height solid transparent;
+  border-right: @height solid transparent;
+}
+.triangle(@direction: bottom, @color: #343434, @width: 8px, @height: 4px) when(@direction=top) {
+  width: 0;
+  height: 0;
+  border-bottom: @width / 2 solid @color;
+  border-left: @height solid transparent;
+  border-right: @height solid transparent;
+}
+.triangle(@direction: bottom, @color: #343434, @width: 8px, @height: 4px) when(@direction=left) {
+  width: 0;
+  height: 0;
+  border-right: @height / 2 solid @color;
+  border-top: @width solid transparent;
+  border-bottom: @width solid transparent;
+}
+.triangle(@direction: bottom, @color: #343434, @width: 8px, @height: 4px) when(@direction=right) {
+  width: 0;
+  height: 0;
+  border-top: @width solid transparent;
+  border-bottom: @width solid transparent;
+  border-left: @height / 2 solid @color;
+}

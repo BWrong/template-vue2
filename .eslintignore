@@ -1,0 +1,6 @@
+.eslintrc.js
+packages/renderer/src/components.d.ts
+packages/renderer/public
+*.mjs
+./types.d.ts
+*.d.ts
